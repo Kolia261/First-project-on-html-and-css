@@ -1,0 +1,37 @@
+/* Стилизация страницы */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header, main, footer {
+    padding: 20px;
+}
+
+h1, h2, h3 {
+    margin: 0;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+input, textarea, button {
+    margin-top: 10px;
+}
+
+/* Стилизация личного кабинета */
+#personal-cabinet {
+    display: none;
+}
+
+/* Стилизация текущих записей */
+#current-appointments {
+    margin-top: 10px;
+}
+
+/* Стилизация кнопки назад */
+.back-button {
+    margin-top: 20px;
+}

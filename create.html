@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Создание теста</title>
+<link rel="stylesheet" href="stylest.css">
+</head>
+<body>
+<div class="container">
+    <h1>Создание теста</h1>
+    <form id="testForm">
+        <label for="question">Вопрос:</label>
+        <input type="text" id="question" required>
+        <label for="answer1">Ответ 1:</label>
+        <input type="text" id="answer1" required>
+        <label for="answer2">Ответ 2:</label>
+        <input type="text" id="answer2" required>
+        <label for="answer3">Ответ 3:</label>
+        <input type="text" id="answer3" required>
+        <label for="correctAnswer">Правильный ответ (1, 2 или 3):</label>
+        <input type="number" id="correctAnswer" min="1" max="3" required>
+        <button type="submit">Добавить вопрос</button>
+    </form>
+    <div id="questions"></div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support</title>
+    <link rel="stylesheet" href="stylessup.css">
+</head>
+<body>
+<div class="support-button" onclick="toggleSupportWindow()">
+    <p>Поддержка</p>
+</div>
+<div class="support-window" id="supportWindow">
+    <div class="close-button" onclick="toggleSupportWindow()">X</div>
+    <h2>Напишите нам</h2>
+    <form action="submit_support_message.php" method="POST">
+        <textarea name="message" placeholder="Введите ваше сообщение" required></textarea>
+        <button type="submit">Отправить</button>
+    </form>
+</div>
+
+<script>
+    function toggleSupportWindow() {
+        var supportWindow = document.getElementById("supportWindow");
+        supportWindow.classList.toggle("show");
+    }
+</script>
+</body>
+</html>

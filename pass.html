@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Прохождение теста</title>
+</head>
+<body>
+<div class="container">
+    <h1>Отсканируйте QR-код, чтобы пройти тест</h1>
+    <div id="qrcode"></div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+<script>
+    var qr = new QRious({
+        element: document.getElementById('qrcode'),
+        value: 'https://example.com/test/1' // Здесь указать ссылку на созданный тест
+    });
+</script>
+</body>
+</html>

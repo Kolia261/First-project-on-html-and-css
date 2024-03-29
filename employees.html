@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Команда</title>
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .employees {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .employee {
+            width: 30%;
+            margin-bottom: 40px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            padding: 20px;
+            cursor: pointer;
+        }
+
+        .employee img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 10px;
+        }
+
+        .employee h2 {
+            font-size: 18px;
+        }
+
+        .employee p {
+            font-size: 14px;
+            color: #777;
+        }
+
+        button {
+            display: block;
+            margin: 0 auto;
+            padding: 10px 20px;
+            background-color: #337ab7;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-content {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            width: 400px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .modal h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .modal p {
+            font-size: 16px;
+            color: #777;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 5px;
+            background-color: #ccc;
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Наша команда</h1>
+    <div class="employees">
+        <div class="employee" onclick="showModal(1)">
+            <img src="employee1.jpeg" alt="Фото сотрудника 1">
+            <h2>Баранов Николай</h2>
+            <p>Главный программист</p>
+        </div>
+        <div class="employee" onclick="showModal(2)">
+            <img src="employee2.jpg" alt="Фото сотрудника 2">
+            <h2>Пусто</h2>
+            <p>Пусто</p>
+        </div>
+        <div class="employee" onclick="showModal(3)">
+            <img src="employee3.jpg" alt="Фото сотрудника 3">
+            <h2>Пусто</h2>
+            <p>Пусто</p>
+        </div>
+    </div>
+    <button onclick="goBack()">Назад</button>
+</div>
+
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <button class="close-btn" onclick="hideModal()">X</button>
+        <h2 id="employee-title"></h2>
+        <p id="employee-description"></p>
+    </div>
+</div>
+
+<script>
+    function showModal(employeeId) {
+        document.getElementById("employee-title").innerHTML = getEmployeeTitle(employeeId);
+        document.getElementById("employee-description").innerHTML = getEmployeeDescription(employeeId);
+        document.getElementById("modal").style.display = "block";
+    }
+
+    function hideModal() {
+        document.getElementById("modal").style.display = "none";
+    }
+
+    function getEmployeeTitle(employeeId) {
+        switch(employeeId) {
+            case 1:
+                return "Баранов Николай";
+            case 2:
+                return "Пусто";
+            case 3:
+                return "Пусто";
+            default:
+                return "";
+        }
+    }
+
+    function getEmployeeDescription(employeeId) {
+        switch(employeeId) {
+            case 1:
+                return "Баранов Николай - разработчик сайта, главный программист.";
+            case 2:
+                return "Нету";
+            case 3:
+                return "Нету";
+            default:
+                return "";
+        }
+    }
+
+    function goBack() {
+        window.history.back();
+    }
+</script>
+</body>
+</html>
